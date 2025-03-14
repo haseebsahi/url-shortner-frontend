@@ -20,4 +20,8 @@ export class UrlListComponent implements OnInit {
       this.shortUrls = response;
     });
   }
+
+  redirectToOriginalUrl(originalUrl: string): void {
+    window.open(originalUrl, '_blank');
+  }
 }

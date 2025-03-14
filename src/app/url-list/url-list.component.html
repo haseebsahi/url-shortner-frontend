@@ -2,7 +2,7 @@
     <h2>Shortened URLs</h2>
     <ul>
       <li *ngFor="let url of shortUrls">
-        <a [href]="url.shortUrl" target="_blank">{{ url.shortUrl }}</a> - {{ url.originalUrl }} ({{ url.clicks }} clicks)
+        <a href="#" (click)="redirectToOriginalUrl(url.originalUrl)">{{ url.shortUrl }}</a> - ({{ url.clicks }} clicks)
       </li>
     </ul>
 </div>
