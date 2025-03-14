@@ -1,7 +1,5 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to URL Shortener!
-  </h1>
-  <app-shorten-url></app-shorten-url>
-  <app-url-list></app-url-list>
+<div style="text-align: center">
+  <h1>Welcome to URL Shortener!</h1>
+  <app-shorten-url (urlShortened)="urlList.onUrlShortened()"></app-shorten-url>
+  <app-url-list #urlList></app-url-list>
 </div>
