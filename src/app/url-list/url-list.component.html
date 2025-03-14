@@ -1,9 +1,9 @@
 <div>
-  <h2>Analytics</h2>
+  <h2>Your URLs</h2>
   <ul>
     <li *ngFor="let url of shortUrls">
       <a href="#" (click)="redirectToOriginalUrl(url.shortUrl)">{{
-        url.shortUrl
+        serverDomain + url.shortUrl
       }}</a>
       - ({{ url.clicks }} clicks)
     </li>

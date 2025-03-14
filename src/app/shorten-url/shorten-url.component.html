@@ -8,7 +8,11 @@
   <button (click)="shortenUrl()">Shorten</button>
 
   <div id="result" *ngIf="shortUrl">
-    <p>Your shortened URL:</p>
-    <a id="short-url" href="#" target="_blank">{{ shortUrl }}</a>
+    <p>
+      Your shortened URL:
+      <a id="short-url" href="#" [target]="shortUrl">{{
+        serverDomain + shortUrl
+      }}</a>
+    </p>
   </div>
 </div>

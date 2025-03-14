@@ -6,22 +6,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UrlShortenerService {
-  private apiUrl = 'http://localhost:3000/shortener';
+  private baseURL = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
   shortenUrl(originalUrl: string): Observable<any> {
-    return this.http.post(this.apiUrl, { originalUrl });
+    return this.http.post(`${this.baseURL}/shorten`, { originalUrl });
   }
 
   getShortUrls(): Observable<any> {
-    console.log('apiUrl: ', this.apiUrl);
-    return this.http.get(this.apiUrl);
+    return this.http.get(`${this.baseURL}/list`);
   }
 
   getOriginalUrl(shortUrl: string): Observable<any> {
-    const url = `${this.apiUrl}/${shortUrl}`;
-    console.log('url: ', url);
-    return this.http.get(url);
+    return this.http.get(`${this.baseURL}/original/${shortUrl}`);
   }
 }

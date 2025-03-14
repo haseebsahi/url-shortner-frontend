@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { UrlShortenerService } from '../url-shortener.service';
+import { UrlShortenerService } from '../_services/url-shortener.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './shorten-url.component.css',
 })
 export class ShortenUrlComponent {
+  serverDomain: string = 'http://localhost:3000/'; // 'bit.ly/';
   originalUrl: string = '';
   shortUrl: string = '';
 
@@ -22,6 +23,7 @@ export class ShortenUrlComponent {
     this.urlShortenerService
       .shortenUrl(this.originalUrl)
       .subscribe((response) => {
+        console.log('response: ', response);
         this.shortUrl = response.shortUrl;
         this.urlShortened.emit(); // Emit event after URL is shortened
       });
