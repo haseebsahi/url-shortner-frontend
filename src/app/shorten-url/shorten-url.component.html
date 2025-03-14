@@ -1,8 +1,14 @@
 <div>
-  <h2>Shorten URL</h2>
-  <input [(ngModel)]="originalUrl" placeholder="Enter URL" />
+  <input
+    [(ngModel)]="originalUrl"
+    type="url"
+    id="url-input"
+    placeholder="Enter your URL here"
+  />
   <button (click)="shortenUrl()">Shorten</button>
-  <div *ngIf="shortUrl">
-    <p>Short URL: {{ shortUrl }}</p>
+
+  <div id="result" *ngIf="shortUrl">
+    <p>Your shortened URL:</p>
+    <a id="short-url" href="#" target="_blank">{{ shortUrl }}</a>
   </div>
 </div>
