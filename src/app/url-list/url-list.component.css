@@ -1,0 +1,40 @@
+div {
+    margin: 20px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-right: 10px;
+    width: 300px;
+  }
+  
+  button {
+    padding: 10px 20px;
+  }
+  
+  p {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  div {
+    margin: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+  }
+  
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
