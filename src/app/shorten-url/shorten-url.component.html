@@ -5,14 +5,13 @@
     id="url-input"
     placeholder="Enter your URL here"
   />
-  <button (click)="shortenUrl()">Shorten</button>
+  <button id="shorten-btn" (click)="shortenUrl()">Shorten</button>
 
   <div id="result" *ngIf="shortUrl">
     <p>
       Your shortened URL:
-      <a id="short-url" href="#" [target]="shortUrl">{{
-        serverDomain + shortUrl
-      }}</a>
+      <span id="short-url">{{ serverDomain + shortUrl }}</span>
+      <button (click)="copyToClipboard()">Copy</button>
     </p>
   </div>
 </div>

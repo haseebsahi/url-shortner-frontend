@@ -28,4 +28,16 @@ export class ShortenUrlComponent {
         this.urlShortened.emit(); // Emit event after URL is shortened
       });
   }
+
+  copyToClipboard() {
+    const url = this.serverDomain + this.shortUrl;
+    navigator.clipboard.writeText(url).then(
+      () => {
+        alert('URL copied to clipboard!');
+      },
+      (err) => {
+        console.error('Could not copy text: ', err);
+      }
+    );
+  }
 }

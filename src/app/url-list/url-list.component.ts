@@ -22,7 +22,7 @@ export class UrlListComponent implements OnInit {
 
   loadShortUrls(): void {
     this.urlShortenerService.getShortUrls().subscribe((response) => {
-      this.shortUrls = response;
+      this.shortUrls = response.reverse();
     });
   }
 
@@ -31,10 +31,8 @@ export class UrlListComponent implements OnInit {
   }
 
   redirectToOriginalUrl(shortUrl: string): void {
-    this.urlShortenerService.getOriginalUrl(shortUrl).subscribe((response) => {
-      const originalUrl = response.url;
-      window.open(originalUrl, '_blank');
-      this.loadShortUrls(); // Refresh the list after redirection
-    });
+    const finalUrl = this.serverDomain + shortUrl;
+    window.open(finalUrl, '_blank');
+    this.loadShortUrls(); // Refresh the list after redirection
   }
 }
