@@ -1,27 +1,67 @@
-# UrlShortnerFrontend
+# URL Shortener Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.12.
+This is the frontend application for the URL shortener project built using Angular. It allows users to shorten long URLs and track their usage.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Shorten URLs**: Users can enter a long URL and receive a shortened version.
+- **View Analytics**: Users can see how many times their shortened URLs have been accessed.
+- **Redirection**: Users can click on a shortened URL to be redirected to the original URL.
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+- Node.js (version 14 or higher)
+- Angular CLI (version 17 or higher)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
 
-## Running unit tests
+1. Clone the repository:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```
+   git clone <repository-url>
+   ```
 
-## Running end-to-end tests
+2. Navigate to the frontend directory:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```
+   cd url-shortener/frontend
+   ```
 
-## Further help
+3. Install the dependencies:
+   ```
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Running the Application
+
+To start the development server, run:
+
+```
+ng serve
+```
+
+The application will be available at `http://localhost:4200`.
+
+### API Integration
+
+The frontend communicates with the backend API. Ensure that the backend server is running and accessible. The API endpoints used are:
+
+- `POST /shorten`: To shorten a long URL.
+- `GET /:shortId`: To redirect to the original URL.
+- `GET /analytics/:shortId`: To fetch the analytics for a shortened URL.
+
+### Building for Production
+
+To build the application for production, run:
+
+```
+ng build --prod
+```
+
+The output will be in the `dist/` directory.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
